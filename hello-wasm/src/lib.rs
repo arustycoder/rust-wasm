@@ -2,10 +2,22 @@
 // Import the wasm-bindgen crate.
 use wasm_bindgen::prelude::*;
 
-// Our add function
-// wasm-pack requires "exported" functions
-// to include [wasm_bindgen]
+// This exports an add function
+// It takes two 32-bits integer values
+// And returns a 32-bits integer value
+
 #[wasm_bindgen]
-pub fn add(a: i32, b: i32) -> i32 {
-    a + b
+pub fn call_me_from_javascript(a: i32, b: i32) -> i32 {
+    add_integer_with_constant(a, b)
+}
+
+// An NOT exported constant
+// Rust does not support exporting constants
+// for Wasm (that I known of)
+const ADD_CONSTANT: i32 = 23;
+
+// An Not exported function
+
+fn add_integer_with_constant(a: i32, b: i32) -> i32 {
+    a + b + ADD_CONSTANT
 }
