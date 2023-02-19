@@ -1,7 +1,7 @@
 // Import our outputted wasm ES6 module
 // which, export default's, an initialization function
 import wasmInit from "./pkg/hello_wasm.js";
-import {domConsoleLog} from "/demo-utils/domConsole";
+import {domConsoleLog} from "../demo-utils/domConsole";
 
 const runWasm = async () => {
     // Instantiate our wasm module
