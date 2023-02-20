@@ -1,0 +1,22 @@
+[package]
+name = "embedding_examples"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[[bin]]
+name = "hello_world"
+path = "src/hello_world.rs"
+
+[[bin]]
+name = "gcd"
+path = "src/gcd.rs"
+
+[[bin]]
+name = "memory"
+path = "src/memory.rs"
+
+[dependencies]
+anyhow = "1.0"
+wasmtime = "5.0.0"
